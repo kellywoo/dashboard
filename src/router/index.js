@@ -1,22 +1,24 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainComponent from '@/components/pages/main-page'
-import SlideComponent from '@/components/pages/slide-page'
-import YoutubeComponent from '@/components/pages/youtube-page'
-import GridComponent from '@/components/pages/grid-page'
-
+import MainPageComponent from '@/components/pages/main-page'
+import SlidePageComponent from '@/components/pages/slide-page'
+import YoutubePageComponent from '@/components/pages/youtube-page'
+import GridPageComponent from '@/components/pages/grid-page'
+import WaitPartComponent from '@/components/parts/waiting'
 Vue.use(Router);
 
 export default new Router({
   mode:  'history',
   routes: [{
-    path: '/main', name: 'main', component: MainComponent
+    path: '/main', name: 'main', component: MainPageComponent
   },{
-    path: '/slide', name: 'slide', component: SlideComponent
+    path: '/slide', name: 'slide', component: SlidePageComponent
   },{
-    path: '/youtube', name: 'youtube', component: YoutubeComponent
+    path: '/youtube', name: 'youtube', component: YoutubePageComponent
   },{
-    path: '/grid', name: 'grid', component: GridComponent
+    path: '/grid', name: 'grid', component: GridPageComponent
+  },{
+    path: '/wait', name: 'wait', component: WaitPartComponent
   }, {
     path: '**', redirect: {name:'main'}
   }]
